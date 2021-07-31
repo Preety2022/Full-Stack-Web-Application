@@ -1,0 +1,92 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	/*background-image: linear-gradient(to top, #dbdcd7 0%, #dddcd7 24%, #e2c9cc 30%, #e7627d 46%, #b8235a 59%, #801357 71%, #3d1635 84%, #1c1a27 100%);*/
+	background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+	/*background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);*/
+	min-height: 100vh;
+	margin-top: 10rem;
+}
+.navbar{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 7rem;
+	box-shadow: 0 5px 15px;
+	z-index: 12;
+}
+.logo{
+	height: 50px;
+	padding: 2px;
+}
+.field{
+	color: black;
+	font-weight: bolder;
+	font-size: 2.8rem;
+}
+.footer{
+	background-color: #5F9EA0 ;
+	text-align: center;
+	height: 8rem;
+	bottom: 0;
+	width: 100%;
+	position: sticky;
+	top: 100%;
+}
+.footer p{
+	margin: 3rem;
+	padding: 1rem;
+	font-size: 1.5rem;
+	font-weight: bolder;
+	color: #FAEBD7;
+}
+.slider{
+overflow: hidden;
+border-radius: 2%;
+/*border-color: white;
+border: 2px white;*/
+}
+.slider figure{
+	width: 500%;
+	margin: 0;
+	position: relative;
+	left: 0;
+	animation: 20s slider infinite;                                #will go as infine loop and will never stop
+
+}
+.slider figure img{
+	max-height: 400px;
+	width: 20% ;
+	float: left;
+}
+@keyframes slider{
+	0%{
+		left: 0;
+	}
+	20%{
+		left: 0;
+	}
+	25%{
+		left: -100%;
+	}
+	45%{
+		left: -100%;
+	}
+	50%{
+		left: -200%;
+	}
+	70%{
+		left: -200%;
+	}
+	80%{
+		left: -300%;
+	}
+	90%{
+		left: -300%;
+	}
+	100%{
+		left: -400%;
+	}
+}
