@@ -115,7 +115,7 @@ if(!isset($_SESSION['email']))
       </div>
     </div>
     <div class="row">
-      <center><a href="form.php"><button class="btn btn-info" style="width: 40%; height:5rem ;font-weight: bolder; font-size: 3rem; border-style: ridge;">Create Your Own Resume</button></a><br><br></center>
+      <center><a href="form.php"><button class="btn btn-info" style="width: 45rem; height:5rem ;font-weight: bolder; font-size: 3rem; border-style: ridge;">Create Your Own Resume</button></a><br><br></center>
     </div>
   </div>
   </div>

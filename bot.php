@@ -22,19 +22,17 @@ if(!isset($_SESSION['email']))
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
-<div>
 <div class="container">
 	<div class="bot">
 		<div class="user">
 			<img src="bott\programming.png" alt="Bot">
 			<div class="info">
-				<h2 style="font-weight: bolder;">BOT</h2>
-				<p style="font-weight: bold;">online</p>
+				<h2 style="font-weight: bolder;">VIRTUAL LIBRARY</h2>
 			</div>
 		</div>
 			<div class="chat">
-      <center><h3 style="font-weight:bold; font-family:JuneBug;color: deepskyblue;">Bot is an interface for user smooth interaction.</h3></center>
-			<div class="userchat">Hello, This is Bot!<br>Please enter your message.</div>
+      <center><h3 style="font-weight:bold; font-family:JuneBug;color: deepskyblue;">Interface for user smooth interaction.</h3></center>
+			<div class="userchat">Hello!<br>Please enter the subject name</div>
       <div class="messages-list">
       	
       </div>
@@ -51,7 +49,6 @@ if(!isset($_SESSION['email']))
 	<div class="chatbot">
 		<img src="bott\robot.png" alt="Bot">	
 	</div>
-</div>
 </div>
 
    <script type="text/javascript" src="bott\script.js"></script>
