@@ -9,26 +9,24 @@ if($rowcount==true){
     $row= mysqli_fetch_assoc($data1);
     $verify= password_verify($pass, $row['password']);
     if($verify==1){
-
-
-
-
-/*$query1= "SELECT * FROM reg WHERE email='$email' AND password='$password'";
-$data1 = mysqli_query($con,$query1);
-$rowcount1=mysqli_num_rows($data1);
- if($rowcount1==true){*/
-            session_start();
-            /*$row=mysqli_fetch_array($data1);*/
-            $_SESSION['email']=$row['email'];
-            $_SESSION['name']=$row['name'];
-            $_SESSION['dob']=$row['dob'];
-            $_SESSION['gender']=$row['gender'];
-            $_SESSION['contact']=$row['contact'];
-            $_SESSION['state']=$row['state'];
-            $_SESSION['roll']=$row['roll'];
-            $_SESSION['batch']=$row['batch'];
-            header("Location:dashboard.php");
+        session_start();
+        /*$row=mysqli_fetch_array($data1);*/
+        $_SESSION['email']=$row['email'];
+        $_SESSION['name']=$row['name'];
+        $_SESSION['dob']=$row['dob'];
+        $_SESSION['gender']=$row['gender'];
+        $_SESSION['contact']=$row['contact'];
+        $_SESSION['state']=$row['state'];
+        $_SESSION['roll']=$row['roll'];
+        $_SESSION['batch']=$row['batch'];
+        $_SESSION['image']=$row['image'];
+        $_SESSION['reg_no']=$row['reg_no'];
+        header("Location:dashboard.php");
           }
-     else
-    echo "<script>alert('INVALID CREDENTIALS!!!')</script>";}
+    else
+    {echo "<p style='color:red ;font-size:32px'>**Invalid Password</p>";}
+}
+else{
+    echo "<p style='color:red ;font-size:32px'>**Invalid Credentials</p>Please go back and Register";
+}
 ?>

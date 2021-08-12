@@ -20,6 +20,7 @@ if(!isset($_SESSION['email']))
    <link rel="stylesheet" type="text/css" href="bott\style.css">
       <style>@font-face { font-family: JuneBug; src: url('JUNEBUG.TTF');</style>
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>LMS</title>
 </head>
 <body>
 <div class="container">

@@ -51,15 +51,18 @@ if (isset($_SESSION['email'])) {
      </div>
      <div class="des1">
      	 <img src="images\id.png" alt="REGISTER" id="reg"><br><br>
-     	<form method="post" action="reg.php">
-        <div class="form-group ">
+     	<form method="post" action="reg.php" enctype="multipart/form-data">
+      <div class="form-group ">
    	  <label for="name">Name</label> <input type="text" name="name" placeholder="full name"  required="TRUE"><br><br>
-       <div>
-        <div class="form-group">
+       </div>
+      <div class="form-group">
    	  <label for="email">Email</label>   <input type="email" name="email" placeholder="e-mail" required="TRUE"><br><br></div>
       <div class="form-group">
-  		<label for="contact">Contact</label> <input type="text" name="contact" placeholder="contact" required="TRUE" pattern="[0-9]{10}"><br><br></div><div class="form-group">
-      <label >Roll</label><input type="text" name="roll" placeholder="roll_no" required><br><br></div>
+  		<label for="contact">Contact</label> <input type="text" name="contact" placeholder="contact" required="TRUE" pattern="[0-9]{10}"><br><br></div>
+      <div class="form-group">
+      <label >Roll</label><input type="text" name="roll" placeholder="roll no" required><br><br></div>
+      <div class="form-group">
+      <label >Reg No</label><input type="text" name="reg_no" placeholder="registration no" required><br><br></div>
       <div class="form-group">
       <label>Batch</label><input type="text" name="batch" placeholder="batch" required><br><br></div>
       <div class="form-group">
@@ -83,6 +86,7 @@ if (isset($_SESSION['email'])) {
   		<label for="state">State</label> <input type="text"   name="state" placeholder="state" required="TRUE"><br><br></div>
       <div class="form-group">
   		<label for="country">Country</label> <input type="text"  name="country" placeholder="country" required="TRUE"><br><br></div>
+      <label for="name">Image(jpg/png)</label> <input type="file" name="image" required="TRUE"><br><br>
   		<center><input type="submit" class="btn btn-lg" style="background-color: #000000; font-weight: bolder; color: white;" name="Register" id="click" ></center>
       </div>
   		</form>

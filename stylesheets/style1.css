@@ -5,7 +5,7 @@
 body{
 	background-image: linear-gradient(to top, #dbdcd7 0%, #dddcd7 24%, #e2c9cc 30%, #e7627d 46%, #b8235a 59%, #801357 71%, #3d1635 84%, #1c1a27 100%);
 	min-height: 100vh;
-	margin-top: 10rem;
+	/*margin-top: 10rem;*/
 }
 .navbar{
 	position: fixed;
@@ -14,6 +14,34 @@ body{
 	height: 7rem;
 	box-shadow: 0 5px 15px;
 	z-index: 12;
+}
+.vertical-nav{
+	background-image: linear-gradient(to right, #d7d2cc 0%, #304352 100%);
+	min-width: 17rem;
+	width: 20rem;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+	transition: all 0.4s;
+	z-index: 9;
+}
+#sidebar.active{
+	margin-left: -20rem;
+}
+.page{
+	width: calc(100% - 20rem);
+	margin-left: 20rem;
+	transition: all 0.4s;
+}
+.page.active{
+	width: 100%;
+	margin: 0;
+}
+.link{
+	color: #ffffff;
+	font-size: 2rem;
 }
 .logo{
 	height: 50px;
@@ -24,12 +52,18 @@ body{
 	font-weight: bolder;
 	font-size: 2.8rem;
 }
+.box{
+	background-color: #ffffff;
+    font-size:5rem;
+    border-radius: 2rem;
+    text-align: center;
+    margin-top: 3rem;
+}
 .footer{
 	background-color: #5F9EA0 ;
 	text-align: center;
 	height: 8rem;
 	bottom: 0;
-	width: 100%;
 	position: sticky;
 	top: 100%;
 }
@@ -42,7 +76,6 @@ body{
 }
 .slider{
 overflow: hidden;
-border-radius: 2%;
 /*border-color: white;
 border: 2px white;*/
 }
@@ -55,7 +88,7 @@ border: 2px white;*/
 
 }
 .slider figure img{
-	max-height: 400px;
+	max-height: 500px;
 	width: 20% ;
 	float: left;
 }
@@ -86,5 +119,23 @@ border: 2px white;*/
 	}
 	100%{
 		left: -400%;
+	}
+}
+
+/* For smaller screen toggle navbar*/
+@media (max-width:  768px){
+	#sidebar{
+		margin-left: -20rem;
+	}
+	#sidebar.active{
+		margin-left: 0;
+	}
+	.page{
+		width: 100%;
+		margin: 0;
+	}
+	.page.active{
+		margin-left: 20rem;
+		width: calc(100% - 17rem);
 	}
 }

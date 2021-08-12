@@ -40,7 +40,6 @@ if(!isset($_SESSION['email']))
           <ul class="nav navbar-nav navbar-right" style="margin: 2rem;">
             <li><a href="https://www.linkedin.com/in/preetyakanksha" target="_blank"><span class="glyphicon glyphicon-phone"></span> Contact</a></li>
             <li><a href="dashboard.php"><span class="glyphicon glyphicon-education"></span> Dashboard</a></li>
-            <li><a href="bot.php"><span class="glyphicon glyphicon-comment"></span> Chat</a></li>
             <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
           </ul>
         </div>
@@ -56,26 +55,27 @@ if(!isset($_SESSION['email']))
   <div class="container">
   <!--
    <?php 
-     $data =file_get_contents('https://openlibrary.org/search.json?q=dbms');
+     $data =file_get_contents('https://www.googleapis.com/books/v1/volumes?q=dbms');
      $corona = json_decode($data);                                                    #decode 
      echo "<pre>";
      print_r($data);
    ?>-->
      <center>
-      <h1 style="color: #20b2aa ; font-size: 5rem; margin-bottom: 4rem; font-weight:bolder;"> SEARCH BOOKS</h1>
+      <h1 style="color: #20b2aa ; font-size: 5rem; margin-bottom: 4rem; font-weight:bolder;"> SEARCH TOPIC</h1>
       <input type="text" name="input" id="books" placeholder="Subject Name" style="width:20rem; height: 5rem; border-style:outset; font-size: 2rem; font-weight: bold;">
       <button id="search" class="btn btn-success btn-lg" onclick="fetch_data()">Search</button>
       <button id="refresh" class="btn btn-warning btn-md" onclick="refresh()">Refresh Page</button>
       <div class="row" style="margin-top: 4rem">
       <div class="table col-xs-12 col-md-10 ">
-       <table class="table table-hover table-bordered text-center" cellpadding="5px" cellspacing="10px" id="tab">
+       <table class="table table-hover table-bordered text-center" cellpadding="5px" cellspacing="10px" id="tab" style="box-shadow: 10px 5px 10px 5px rgba(255, 255, 255, 0.7);display: none;">
         <video height="400" width="600" loop autoplay muted id="vid">
            <source src="images\lib.mp4">
         </video>
-         <tr style="display: none;" id="tr" >
+         <tr>
            <th> Title</th>
            <th>Author Name</th>
            <th>Publisher</th>
+           <th>Know More</th>
          </tr>
        </table>
       </div>
@@ -96,32 +96,37 @@ if(!isset($_SESSION['email']))
       alert('Please give your input');
      }
       else{
-        jQuery('#tr').show();
-        $.get("https://openlibrary.org/search.json?q=" +query,
+        jQuery('#tab').show();
+        $.get("https://www.googleapis.com/books/v1/volumes?q=" +query,
         function (data){       //anonymous function, data as parameteris passed which fetches the data from the url we have passed
           
           var tab = document.getElementById('tab');
-          if(data['docs'].length==0)
+          if(data['items'].length==0)
             alert('Sorry, No Book matches your input');
           else{
-          for(var i=1; i<(data['docs'].length); i++){
+          for(var i=1; i<(data['items'].length); i++){
             var x = tab.insertRow(i);               //row is created
             //cell created
             x.insertCell(0);                    // 0 is for index no
-            tab.rows[i].cells[0].innerHTML = data['docs'][i-1]['title'];
+            tab.rows[i].cells[0].innerHTML = data['items'][i-1]['volumeInfo']['title'];
             tab.rows[i].cells[0].style.background= '#20b2aa';
             tab.rows[i].cells[0].style.color = "white";
 
             x.insertCell(1);
-            tab.rows[i].cells[1].innerHTML = data['docs'][i-1]['author_name'];
-            tab.rows[i].cells[1].style.background = "#b60c26";
+            tab.rows[i].cells[1].innerHTML = data['items'][i-1]['volumeInfo']['authors'];
+            tab.rows[i].cells[1].style.background = "#32527b";
             tab.rows[i].cells[1].style.color = "white";
 
 
             x.insertCell(2);
-            tab.rows[i].cells[2].innerHTML = data['docs'][i-1]['publisher'];
+            tab.rows[i].cells[2].innerHTML = data['items'][i-1]['volumeInfo']['publisher'];
             tab.rows[i].cells[2].style.background = "#20b2aa";
             tab.rows[i].cells[2].style.color = "white";
+
+            x.insertCell(3);
+            tab.rows[i].cells[3].innerHTML =' <a href= '+  data['items'][i-1]['volumeInfo']['infoLink'] +' style="color:#ffffff;" target="_blank">Click Here</a>';
+            tab.rows[i].cells[3].style.background = "#32527b";
+            tab.rows[i].cells[3].style.color = "white";
 
           }
           jQuery('#books').val('');

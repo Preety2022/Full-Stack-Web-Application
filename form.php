@@ -38,6 +38,7 @@ if(!isset($_SESSION['email']))
         <div class="collapse navbar-collapse" id="Nav">
           <ul class="nav navbar-nav navbar-right" style="margin: 2rem;">
             <li><a href="https://www.linkedin.com/in/preetyakanksha" target="_blank"><span class="glyphicon glyphicon-phone"></span> Contact</a></li>
+            <li><a href="resume.php"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
             <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
           </ul>
         </div>
