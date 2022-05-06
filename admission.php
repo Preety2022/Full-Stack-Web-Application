@@ -51,7 +51,7 @@ if (isset($_SESSION['email'])) {
   <div class="container" style="min-height: 100%;" id="instruction">
     <div class="row">
       <div class="col-xs-12 col-md-offset-2 col-md-8" style="background-color: #ffffff;">
-        <u><h1 class="text-center" style="color: #20b2aa; font-weight: bolder; margin-bottom: 6rem;">Instructions for filling the application form</h1></u>
+        <u><h1 class="text-center" style="color: #20b2aa; font-weight: bolder; margin-bottom: 6rem; ">Instructions for filling the application form</h1></u>
         <ol style="padding: 3rem; text-align: justify;">
           <li>Select the appropriate Course for admission. Candidates having PCM and PCBM at 10+2/ equivalent level are eligible for all 
               the four trades of B.Tech. (I.T./C.S.E./B.I.), whereas candidates having PCB at 10+2/equivalent level are eligible for 

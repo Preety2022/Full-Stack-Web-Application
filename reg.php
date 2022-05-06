@@ -21,7 +21,7 @@ $query= "SELECT * FROM reg WHERE email='$email'";
 $data = mysqli_query($con,$query);
 $rowcount=mysqli_num_rows($data);
 if($rowcount!=true){
-$users_registration_query="INSERT INTO reg(name,email,password,contact,city,address,postal_code,state,country,gender,roll,batch,dob,reg_no,image)values('$name','$email','$pass','$contact','$city','$address','$postal_code','$state','$country','$gender','$roll','$batch','$dob','$reg_no','$profile')";
+$users_registration_query="INSERT INTO reg(name,email,password,contact,city,address,postal_code,state,country,gender,roll,batch,dob,reg_no,image)values(`$name`,`$email`,`$pass`,`$contact`,`$city`,`$address`,`$postal_code`,`$state`,`$country`,`$gender`,`$roll`,`$batch`,`$dob`,`$reg_no`,`$profile`)";
 $users_registration_submit=mysqli_query($con,$users_registration_query); 
 if($users_registration_submit==1){
     $subject = "Registered Successfully";
