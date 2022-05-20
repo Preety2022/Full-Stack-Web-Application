@@ -1,8 +1,8 @@
 <?php
 require 'connect.php'; 
 session_start();
-if (isset($_SESSION['email'])) {
-    header('location: dashboard.php');
+if (isset($_SESSION['adminemail'])) {
+    header('location: admin.php');
       } 
 ?>
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ if (isset($_SESSION['email'])) {
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    <style>@font-face { font-family: JuneBug; src: url('JUNEBUG.TTF');</style>
    <link rel="stylesheet" type="text/css" href="stylesheets\style2.css">
-   <title>LOGIN</title>
+   <title>Admin Login</title>
 </head>
 <body>
   <nav class="navbar navbar-inverse">
@@ -48,7 +48,7 @@ if (isset($_SESSION['email'])) {
    	  			<center><h1>Login</h1></center>
    	  		</div>
    	  	<div class="panel-body">
-   	  		<form method="POST" action="login_sub.php">
+   	  		<form method="POST" action="adminlogin_script.php">
    	  			Email    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type="email" name="email" placeholder="e-mail" required="TRUE"><br><br>
    	  			Password : <input type="password" name="password" placeholder="password" required="TRUE">
    	  		

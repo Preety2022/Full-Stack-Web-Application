@@ -4,6 +4,8 @@ session_start();
 if (isset($_SESSION['email'])) {
     header('location: dashboard.php');
       } 
+elseif (isset($_SESSION['adminemail'])) {
+  header('location: admin.php');}
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +37,7 @@ if (isset($_SESSION['email'])) {
           <span class="icon-bar"></span>  
         </button>
           <a href="#" class="navbar-brand">
-            <img src="images\logo.png" class="logo">
+            <img src="images\skill.png" class="logo">
           </a>
         </div>
         <div class="collapse navbar-collapse" id="Nav">
@@ -52,7 +54,8 @@ if (isset($_SESSION['email'])) {
         <h3 style="color:#ffffff">Hii!</h3>
         <p style="font-size: 2rem; color:#ffffff">This website is a Student Management System which serves as a tool to maintain the record of students. It is an initiative to provide a common platform to help students get the information of Books associated to their curriculum, to build their resume and much more.</p>
         <h4 style="color:#ffffff">Please Register soon!</h4><br><br><br><br><br><br>
-        <a href="register.php"><button class="btn btn-info" style="width: 30rem; height:5rem ;font-weight: bolder; font-size: 3rem; border-style: solid;border-width: 0.2rem; border-color: darkred;">REGISTER</button></a><br><br>
+        <a href="adminlogin.php"><button class="btn btn-info" style="width: 30rem; height:5rem ;font-weight: bolder; font-size: 3rem; border-style: solid;border-width: 0.2rem; border-color: darkred;">ADMIN LOGIN</button></a><br><br>
+        <a href="login.php"><button class="btn btn-info" style="width: 30rem; height:5rem ;font-weight: bolder; font-size: 3rem; border-style: solid;border-width: 0.2rem; border-color: darkred;">STUDENT LOGIN</button></a><br>
       </div>
       <div class="col-xs-12 col-md-6">
         <img src="images\study.jpg" class="img-responsive" >

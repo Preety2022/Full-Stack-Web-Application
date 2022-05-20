@@ -14,7 +14,7 @@ if($rowcount==true){
         $_SESSION['email']=$row['email'];
         $_SESSION['name']=$row['name'];
         $_SESSION['dob']=$row['dob'];
-        $_SESSION['gender']=$row['gender'];
+        $_SESSION['univ_roll']=$row['univ_roll'];
         $_SESSION['contact']=$row['contact'];
         $_SESSION['state']=$row['state'];
         $_SESSION['roll']=$row['roll'];

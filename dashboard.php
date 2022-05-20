@@ -52,7 +52,7 @@ if(!isset($_SESSION['email']))
     <div class="py-4 px-3 mb-4 bg-light">
       <div class="media d-flex align-items-center">
         <center>
-        <img src="images\logo.png" width="40" height="40" style="margin-top:5rem"></center>
+        <img src="images\skill.png" width="40" height="40" style="margin-top:5rem"></center>
         <div class="media-body">
           <h3 class="text-center" style="color: orange;"> Navigation Bar </h3>
 
@@ -78,6 +78,9 @@ if(!isset($_SESSION['email']))
       </li>
       <li class="nav-item">
          <a href="bot.php" class="link"><span class="glyphicon glyphicon-pushpin"></span> Library</a>
+      </li>
+      <li class="nav-item">
+         <a href="academicFee.php" class="link"><span class="glyphicon glyphicon-hourglass"></span> Fee Payment</a>
       </li>
       <li class="nav-item">
          <a href="logout.php" class="link"><span class="glyphicon glyphicon-log-out"></span> Logout</a>

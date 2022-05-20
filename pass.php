@@ -9,7 +9,7 @@ $rowcount1=mysqli_num_rows($data1);
 if($rowcount1==true){
   $pass_query= "UPDATE reg SET password='$pass' WHERE`email`='$email'";
   $pass_submit=mysqli_query($con,$pass_query);
-  header("Location:login.php");}
+  header("Location:admin.php");}
 else
   echo "<p style='color:red ;font-size:32px'>Please Register yourself!!!</p>";
 ?>

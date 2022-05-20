@@ -1,8 +1,8 @@
 <?php
 require 'connect.php'; 
 session_start();
-if (isset($_SESSION['email'])) {
-    header('location: dashboard.php');
+if (!isset($_SESSION['adminemail'])) {
+    header('location: index.php');
       } 
 ?>
 <!DOCTYPE html>

@@ -1,7 +1,7 @@
 <?php
 require 'connect.php';
 session_start();
-if(!isset($_SESSION['email']))
+if(!isset($_SESSION['adminemail']))
 {
   header('location: index.php');
 }
@@ -49,12 +49,35 @@ if(!isset($_SESSION['email']))
       <div class="col-xs-12 col-md-6">
         <img src="images\1.jpg" class="img-responsive" style="margin-top: 5rem;" ><br><br>
       </div>
-      <div class="col-xs-12 col-md-6" style="font-family: JuneBug ;">
+
+      <div class="col-xs-12 col-md-6" style="font-family: JuneBug ;" id="start1">
+      <div style="margin-top: 6rem; " id="start2" ;>
+          <legend ><h2 style="font-weight: bold; color: #ffffff">Fetch Student's Data</h2></legend>
+          <table class="table field" cellpadding="0" cellspacing="0">
+            <form method="post" action="main_script.php">
+            <tr>
+              <th>NAME</th>
+              <th><i><input type="text" name="roll" placeholder="Enter university roll" required></i></th>
+            </tr>
+            <tr>
+              <th>Fetching Results..</th>
+              <th><i><input type="submit" name="display" onclick="func1"></i></th>
+            </tr>
+          </form>
+          </table>
+        </div>
+      </div>
+
+
+      <div class="col-xs-12 col-md-6" style="font-family: JuneBug ;display: none;" id="start1">
         <center>
+          
           <div style="height: 250px; width:250px; border: 5px solid; margin-top: 5rem"><?php echo '<img src="data:image;base64, '.base64_encode($_SESSION['image']).' " alt="Image" style="width:100%; height:100%" >';  ?>
           </div>
         </center>
-        <div style="margin-top: 6rem">
+
+
+        <div style="margin-top: 6rem; ">
           <legend ><h2 style="font-weight: bold; color: #ffffff">YOUR PROFILE</h2></legend>
           <table class="table field" cellpadding="0" cellspacing="0">
             <tr>
@@ -78,8 +101,12 @@ if(!isset($_SESSION['email']))
               <th><i><?php echo $_SESSION['batch']; ?></i></th>
             </tr>
             <tr>
-              <th>Univ Roll</th>
+              <th>Uni Roll</th>
               <th><i><?php echo $_SESSION['univ_roll']; ?></i></th>
+            </tr>
+            <tr>
+              <th>Email</th>
+              <th><i><?php echo $_SESSION['studentemail']; ?></i></th>
             </tr>
             <tr>
               <th>CONTACT</th>
@@ -99,5 +126,11 @@ if(!isset($_SESSION['email']))
     <p>DESIGNED BY PREETY AKANKSHA<br>
     Contact: akankshapreety4545@gmail.com</p>
   </div>
+  <script>
+    function func1(){
+       jQuery('#start2').hide();
+       jQuery('#start1').show();
+    }
+  </script>
 </body>
 </html>

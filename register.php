@@ -1,8 +1,8 @@
 <?php
 require 'connect.php'; 
 session_start();
-if (isset($_SESSION['email'])) {
-    header('location: dashboard.php');
+if (!isset($_SESSION['adminemail'])) {
+    header('location: index.php');
       } 
 ?>
 <!DOCTYPE html>
@@ -31,13 +31,12 @@ if (isset($_SESSION['email'])) {
           <span class="icon-bar"></span>  
         </button>
           <a href="#" class="navbar-brand">
-            <img src="images\logo.png" class="logo">
+            <img src="images\skill.png" class="logo">
           </a>
         </div>
         <div class="collapse navbar-collapse" id="Nav">
           <ul class="nav navbar-nav navbar-right" style="margin: 2rem;">
-            <li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-            <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li><a href="admin.php"><span class="glyphicon glyphicon-education"></span> Dashboard</a></li>
           </ul>
         </div>
     </div>
@@ -51,29 +50,31 @@ if (isset($_SESSION['email'])) {
      </div>
      <div class="des1">
      	 <img src="images\id.png" alt="REGISTER" id="reg"><br><br>
-     	<form method="post" action="reg.php" enctype="multipart/form-data">
+     	<form method="POST" action="reg.php" enctype="multipart/form-data">
       <div class="form-group ">
    	  <label for="name">Name</label> <input type="text" name="name" placeholder="full name"  required="TRUE"><br><br>
        </div>
       <div class="form-group">
-   	  <label for="email">Email</label>   <input type="email" name="email" placeholder="e-mail" required="TRUE"><br><br></div>
+   	  <label for="email">Email</label><input type="email" name="email" placeholder="e-mail" required="TRUE"><br><br></div>
       <div class="form-group">
   		<label for="contact">Contact</label> <input type="text" name="contact" placeholder="contact" required="TRUE" pattern="[0-9]{10}"><br><br></div>
       <div class="form-group">
-      <label >Roll</label><input type="text" name="roll" placeholder="roll no" required><br><br></div>
+      <label >Class Roll</label><input type="text" name="roll" placeholder="roll no" required><br><br></div>
+      <div class="form-group">
+        <label >University Roll</label><input type="text" name="uniroll" placeholder="university roll no" required><br><br></div>
       <div class="form-group">
       <label >Reg No</label><input type="text" name="reg_no" placeholder="registration no" required><br><br></div>
       <div class="form-group">
       <label>Batch</label><input type="text" name="batch" placeholder="batch" required><br><br></div>
       <div class="form-group">
       <label for="dob">Date of Birth</label><input type="date" name="dob" placeholder="DOB" style="width: 27rem;" required><br><br></div>
-      <div class="form-group">
+      <!--<div class="form-group">
       <label >Gender</label>
       <select name="gender" style=" width: 27rem ;background-color: #000000">
       <option value="male" >Male</option>
       <option value="female">Female</option>
       <option value="trans" >Transgender</option>
-      </select><br><br></div>
+      </select><br><br></div>-->
       <div class="form-group">
   		<label for="password">Password</label> <input type="password"  name="password" placeholder="password" required="TRUE"><br><br></div>
       <div class="form-group">

@@ -33,7 +33,7 @@ if(!isset($_SESSION['email']))
           <span class="icon-bar"></span>  
         </button>
           <a href="#" class="navbar-brand">
-            <img src="images\logo.png" class="logo">
+            <img src="images\skill.png" class="logo">
           </a>
         </div>
         <div class="collapse navbar-collapse" id="Nav">

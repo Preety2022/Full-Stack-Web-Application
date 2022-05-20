@@ -34,6 +34,22 @@ if(!isset($_SESSION['email']))
 			<div class="chat">
       <center><h3 style="font-weight:bold; font-family:JuneBug;color: deepskyblue;">Interface for user smooth interaction.</h3></center>
 			<div class="userchat">Hello!<br>Please enter the subject name</div>
+
+      <!-- buttons for user access
+
+      <div class="userchat" id="phase1">
+        Choose which semester
+       <select name="year" id= "year" class="inputbox" style=" margin-bottom: 20px; width: 20rem; height: 4rem; font-size: 2rem; font-weight: bold; border-style: double;" required>
+          <option value="1" >First Year</option>
+          <option value="2">Second Year</option>
+          <option value="3" >Third Year</option>
+          <option value="4" >Fourth Year</option></select>
+       <center><br>
+        <input type="submit" name="btn" value="Search.." onclick="search()">
+       </center>
+      </div>-->
+
+
       <div class="messages-list">
       	
       </div>
@@ -42,7 +58,7 @@ if(!isset($_SESSION['email']))
 
 			<div class="input">
 			<input type="text" placeholder="Enter Message" id="txt">
-			<button class="btn" type="submit" onclick="send()">
+			<button class="btn" type="submit" onclick="send()" id="btn">
 				<img src="bott\send.png" alt="send">
 			</button>
 		</div>
@@ -55,9 +71,10 @@ if(!isset($_SESSION['email']))
    <script type="text/javascript" src="bott\script.js"></script>
 
    <script type="text/javascript">
-   	
    	function send(){
+
      var msg = jQuery('#txt').val(); 
+
      if(msg==''){
      	alert('Please give your input');
      }
@@ -65,20 +82,24 @@ if(!isset($_SESSION['email']))
      var input='<div class="mychat">'+msg+'</div>';
      jQuery('.messages-list').append(input);
      jQuery('#txt').val('');}
-
-
-
      if(msg)
      {
      	jQuery.ajax({
      		url:'post.php',                 //get bot message
      		type: 'post',
      		data: 'msg=' +msg,
-     		success: function(result){
-          var input = '<div class="userchat">'+result+'</div>';
-          jQuery(".messages-list").append(input);
-          jQuery('.chat').scrollTop(jQuery('.chat')[0].scrollHeight);
-
+     		success: function(output){
+          var result = output.split("|");
+          for (var i = 0; i < 13; i++) {
+            if(!result[i])
+              {break;}
+            else{
+                /*var input = '<div class="userchat">'+result[0]+"<br><br>"+result[1]+"<br><br>"+result[2]+"<br><br>"+result[3]+'</div>';*/
+                var input = '<div class ="userchat">'+result[i]+'</div>';
+                jQuery(".messages-list").append(input);
+                jQuery('.chat').scrollTop(jQuery('.chat')[0].scrollHeight);
+            }
+          }
           
         }
      	});
